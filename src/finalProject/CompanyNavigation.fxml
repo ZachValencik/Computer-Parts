@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.CompanyNavigationController">
+   <center>
+      <AnchorPane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="206.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Navigation">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
+            <Text layoutX="144.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Category" />
+            <ComboBox fx:id="browseCB" layoutX="237.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0" />
+            <Button fx:id="browseBtn" layoutX="426.0" layoutY="124.0" mnemonicParsing="false" onAction="#goToBuy" text="GO" textFill="#0777ff">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Text layoutX="191.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="News" />
+            <Button layoutX="237.0" layoutY="169.0" mnemonicParsing="false" text="GO" textFill="#0777ff">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="logoutButton" layoutX="205.0" layoutY="277.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="65.0" text="Logout" textFill="#0777ff" />
+            <Button fx:id="adminButton" layoutX="335.0" layoutY="277.0" mnemonicParsing="false" onAction="#adminPage" prefHeight="25.0" prefWidth="91.0" text="Admin Page" textFill="#0777ff" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

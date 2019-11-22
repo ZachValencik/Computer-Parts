@@ -59,16 +59,16 @@
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                            <children>
                               <Text layoutX="11.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Item ID" />
-                              <TextField layoutY="38.0" prefWidth="100.0" />
-                              <Button layoutX="24.0" layoutY="63.0" mnemonicParsing="false" text="Go" />
+                              <TextField fx:id="sIdField" layoutY="38.0" prefWidth="100.0" />
+                              <Button layoutX="24.0" layoutY="63.0" mnemonicParsing="false" onAction="#searchId" text="Go" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <children>
                               <Text layoutX="16.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Amount" />
-                              <Button layoutX="31.0" layoutY="74.0" mnemonicParsing="false" text="Add" />
-                              <TextField layoutY="38.0" prefWidth="100.0" />
+                              <Button layoutX="31.0" layoutY="74.0" mnemonicParsing="false" onAction="#addAmt" text="Add" />
+                              <TextField fx:id="addAmtField" layoutY="38.0" prefWidth="100.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -79,6 +79,7 @@
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                            <children>
                               <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search item Info" />
+                              <Text fx:id="sTxt" layoutX="39.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />

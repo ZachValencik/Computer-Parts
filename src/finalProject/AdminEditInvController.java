@@ -31,7 +31,12 @@ public class AdminEditInvController {
 	TextField priceField;
 	@FXML
 	TextField companyField;
-
+	@FXML
+	TextField addAmtField;
+	@FXML
+	TextField sIdField;
+	@FXML 
+	Text sTxt;
 	public void recieve(String item) {
 		part = item;
 		editingTxt.setText(item);
@@ -82,4 +87,11 @@ public class AdminEditInvController {
 
 		preparedStmt.execute();
 	}
+public void searchId(ActionEvent event){
+	
+}
+public void addAmt(ActionEvent event){
+	
+}
+
 }

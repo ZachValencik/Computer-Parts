@@ -37,7 +37,7 @@ public class AdminController implements Initializable {
 
 	private ObservableList<String> statList = FXCollections.observableArrayList("# Users", "# items in Inventroy",
 			"total Revenue");
-	private ObservableList<String> invList = FXCollections.observableArrayList("HDD", "SSD", "CPU", "Fans", "Power");
+	private ObservableList<String> invList = FXCollections.observableArrayList("HDD", "SSD", "CPU", "FANS", "POWER");
 
 	
 	public void navigationPage(ActionEvent event) throws IOException {
@@ -93,6 +93,18 @@ public class AdminController implements Initializable {
 
 	public void editInv(ActionEvent event) throws IOException {
 		System.out.println("Editing the inventory...");
+		String n = invCB.getValue().toString();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("CompanyEditInventory.fxml"));
+		Parent root = (Parent) loader.load();
+		AdminEditInvController edit = loader.getController();
+		
+		edit.recieve(n);
+
+		Stage stage = new Stage();
+
+		stage.setScene(new Scene(root));
+		stage.show();
+		
 	}
 
 	@Override

@@ -28,7 +28,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" text="Change" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" onAction="#delete" text="Delete User" GridPane.columnIndex="4" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" />
             <TextField fx:id="fNField" promptText="FirstName" />
@@ -36,9 +35,6 @@
             <TextField fx:id="uNField" promptText="UserName" GridPane.columnIndex="2" />
             <TextField fx:id="eField" promptText="Email" GridPane.columnIndex="3" />
             <TextField fx:id="pField" promptText="Phone #" GridPane.columnIndex="4" />
-            <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" onAction="#adminPage" text="Go Back" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />

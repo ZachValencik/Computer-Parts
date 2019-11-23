@@ -147,12 +147,33 @@ public class AdminEditInvController {
 						+ "',`CPU_COMPANY`='" + company + "' WHERE `CPU_NUM` ="
 						+ idNum;
 			} else if (part.equals("FANS")) {
+				q = "UPDATE `FANS` SET `FAN_NUM`='" + idNum
+						+ "',`FAN_AMOUNT`='"
+						+ (amt + Integer.parseInt(addAmtField.getText()))
+						+ "',`FAN_NAME`='" + item + "',`FAN_PRICE`='" + price
+						+ "',`FAN_COMPANY`='" + company + "' WHERE `FAN_NUM` ="
+						+ idNum;
 
 			} else if (part.equals("HDD")) {
+				q = "UPDATE `HDD` SET `HDD_NUM`='" + idNum + "',`HDD_AMOUNT`='"
+						+ (amt + Integer.parseInt(addAmtField.getText()))
+						+ "',`HDD_NAME`='" + item + "',`HDD_PRICE`='" + price
+						+ "',`HDD_COMPANY`='" + company + "' WHERE `HDD_NUM` ="
+						+ idNum;
 
 			} else if (part.equals("SSD")) {
+				q = "UPDATE `SSD` SET `SSD_NUM`='" + idNum + "',`SSD_AMOUNT`='"
+						+ (amt + Integer.parseInt(addAmtField.getText()))
+						+ "',`SSD_NAME`='" + item + "',`SSD_PRICE`='" + price
+						+ "',`SSD_COMPANY`='" + company + "' WHERE `SSD_NUM` ="
+						+ idNum;
 
 			} else if (part.equals("POWER")) {
+				q = "UPDATE `POWER` SET `POW_NUM`='" + idNum + "',`POW_AMOUNT`='"
+						+ (amt + Integer.parseInt(addAmtField.getText()))
+						+ "',`POW_NAME`='" + item + "',`POW_PRICE`='" + price
+						+ "',`POW_COMPANY`='" + company + "' WHERE `POW_NUM` ="
+						+ idNum;
 
 			}
 

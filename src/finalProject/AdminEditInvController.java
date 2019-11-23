@@ -21,6 +21,12 @@ public class AdminEditInvController {
 	// database
 	private TreeSet items;
 	private String part;
+	private int idNum;
+	private int amt;
+	private String item;
+	private float price;
+	private String company;
+	private boolean exist = false;
 	@FXML
 	Text editingTxt;
 	@FXML
@@ -35,8 +41,9 @@ public class AdminEditInvController {
 	TextField addAmtField;
 	@FXML
 	TextField sIdField;
-	@FXML 
+	@FXML
 	Text sTxt;
+
 	public void recieve(String item) {
 		part = item;
 		editingTxt.setText(item);
@@ -66,9 +73,9 @@ public class AdminEditInvController {
 		} else if (part.equals("POWER")) {
 			fields = "(POW_NUM, POW_AMOUNT, POW_NAME, POW_PRICE, POW_COMPANY)";
 			r = stmt.executeQuery("SELECT * FROM `POWER` limit 10000");
-		
+
 		}
-	
+
 		String query = " insert into " + part + fields + " values (?,?,?,?,?)";
 
 		int size = 0;
@@ -87,11 +94,75 @@ public class AdminEditInvController {
 
 		preparedStmt.execute();
 	}
-public void searchId(ActionEvent event){
-	
-}
-public void addAmt(ActionEvent event){
-	
-}
 
+	public void searchId(ActionEvent event) throws SQLException {
+		exist = false; // assume its false and reset it if found true
+		String DBPath = "45.55.136.114/computerParts";
+		String fName = "pw.txt";
+		String id = "csc3610";
+		DBAbstract DB = new DBAbstract(DBPath, fName, id);
+		Connection connection = DB.getConnection();
+		Statement stmt = connection.createStatement();
+		ResultSet r = null;
+
+		r = stmt.executeQuery("SELECT * FROM `" + part + "` limit 10000");
+
+		while (r.next()) {
+			if (r.getInt(1) == Integer.parseInt(sIdField.getText())) {
+				exist = true;
+				idNum = r.getInt(1);
+				amt = r.getInt(2);
+				item = r.getString(3);
+				price = r.getFloat(4);
+				company = r.getString(5);
+
+				sTxt.setText(r.getInt(1) + " " + r.getInt(2) + " "
+						+ r.getString(3) + " " + r.getFloat(4) + " "
+						+ r.getString(5));
+				break;
+			}
+			if (!exist) {
+				sTxt.setText("ID Not Found");
+			}
+
+		}
+
+	}
+
+	public void addAmt(ActionEvent event) throws SQLException {
+		if (exist) {
+			String DBPath = "45.55.136.114/computerParts";
+			String fName = "pw.txt";
+			String id = "csc3610";
+			DBAbstract DB = new DBAbstract(DBPath, fName, id);
+			Connection connection = DB.getConnection();
+			Statement stmt = connection.createStatement();
+			ResultSet r = null;
+			String q = null;
+			System.out.println(idNum);
+			if (part.equals("CPU")) {
+				q = "UPDATE `CPU` SET `CPU_NUM`='" + idNum + "',`CPU_AMOUNT`='"
+						+ (amt + Integer.parseInt(addAmtField.getText()))
+						+ "',`CPU_NAME`='" + item + "',`CPU_PRICE`='" + price
+						+ "',`CPU_COMPANY`='" + company + "' WHERE `CPU_NUM` ="
+						+ idNum;
+			} else if (part.equals("FANS")) {
+
+			} else if (part.equals("HDD")) {
+
+			} else if (part.equals("SSD")) {
+
+			} else if (part.equals("POWER")) {
+
+			}
+
+			try {
+				stmt.executeUpdate(q);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
 }

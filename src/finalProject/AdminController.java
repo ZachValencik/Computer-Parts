@@ -132,6 +132,8 @@ public class AdminController implements Initializable {
 
 		infoCB.setItems(statList);
 		invCB.setItems(invList);
+		infoCB.getSelectionModel().selectFirst();
+		invCB.getSelectionModel().selectFirst(); // makes sure no null entry.
 
 	}
 }

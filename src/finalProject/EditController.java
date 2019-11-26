@@ -32,6 +32,7 @@ public class EditController {
 	@FXML
 	Text text;
 	private String uN;
+
 	public void delete(ActionEvent event) {
 		System.out.println("Deleting..");
 		try {
@@ -42,7 +43,7 @@ public class EditController {
 			Connection con = DB.getConnection();
 			String query = "delete from USER_INFO where U_USERNAME = ?";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
-			preparedStmt.setString(1,uN);
+			preparedStmt.setString(1, uN);
 
 			// execute the prepared statement
 			preparedStmt.execute();
@@ -55,25 +56,23 @@ public class EditController {
 
 	}
 
-	public void adminPage(ActionEvent event) throws IOException {
-		Parent newview = FXMLLoader.load(getClass().getResource(
-				"CompanyAdmin.fxml"));
-		Scene tableViewScene = new Scene(newview);
+	/*
+	 * public void adminPage(ActionEvent event) throws IOException { Parent
+	 * newview = FXMLLoader.load(getClass().getResource( "CompanyAdmin.fxml"));
+	 * Scene tableViewScene = new Scene(newview);
+	 * 
+	 * Stage window = (Stage) (((Node) event.getSource()).getScene()
+	 * .getWindow());
+	 * 
+	 * window.setScene(tableViewScene); window.setTitle("Control Center Alpha");
+	 * window.show(); }
+	 */
 
-		Stage window = (Stage) (((Node) event.getSource()).getScene()
-				.getWindow());
-
-		window.setScene(tableViewScene);
-		window.setTitle("Control Center Alpha");
-		window.show();
-	}
-	
-	
 	public void myFunction(String name) {
 
-		uN=name;
-		text.setText("Editing User: "+name);
-		
+		uN = name;
+		text.setText("Editing User: " + name);
+
 	}
 
 }

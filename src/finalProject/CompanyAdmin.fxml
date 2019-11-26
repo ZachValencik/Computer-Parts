@@ -41,6 +41,7 @@
             <Button fx:id="editInvBtn" layoutX="459.0" layoutY="188.0" mnemonicParsing="false" onAction="#editInv" text="Edit Inv" textFill="#0777ff" />
             <Button fx:id="logButton" layoutX="183.0" layoutY="269.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="60.0" text="Logout" textFill="#0777ff" />
             <Button fx:id="navigationButton" layoutX="321.0" layoutY="269.0" mnemonicParsing="false" onAction="#navigationPage" prefHeight="25.0" prefWidth="108.0" text="Navigation Page" textFill="#0777ff" />
+            <Text fx:id="invalidNameTxt" fill="#ff0202" layoutX="258.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" />
          </children>
       </AnchorPane>
    </center>

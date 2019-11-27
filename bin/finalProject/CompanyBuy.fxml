@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.buyController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.buyController">
    <center>
       <AnchorPane prefHeight="401.0" prefWidth="555.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="label" layoutX="254.0" layoutY="24.0" text="Items">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="items" layoutX="75.0" layoutY="89.0" prefWidth="450.0" />
+            <TableView fx:id="tableView" layoutX="8.0" layoutY="14.0" prefHeight="200.0" prefWidth="585.0">
+              <columns>
+                <TableColumn fx:id="itemNum" prefWidth="75.0" text="Item #" />
+                <TableColumn fx:id="inStock" prefWidth="75.0" text="In Stock" />
+                  <TableColumn fx:id="item" prefWidth="200.0" text="Item" />
+                  <TableColumn fx:id="price" prefWidth="75.0" text="Price" />
+                  <TableColumn fx:id="company" prefWidth="75.0" text="Company" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </center>

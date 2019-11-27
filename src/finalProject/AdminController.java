@@ -116,6 +116,7 @@ public class AdminController implements Initializable {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(
 				"CompanyEditInventory.fxml"));
 		Parent root = (Parent) loader.load();
+		
 		AdminEditInvController edit = loader.getController();
 
 		edit.recieve(n);

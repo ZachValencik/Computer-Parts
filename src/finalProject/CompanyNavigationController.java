@@ -31,13 +31,16 @@ public class CompanyNavigationController implements Initializable {
 	// @FXML
 	// RadioButton adminCB;
 
-	private ObservableList<String> list = FXCollections.observableArrayList("HDD", "SSD", "CPU", "Fans", "Power");
+	private ObservableList<String> list = FXCollections.observableArrayList(
+			"HDD", "SSD", "CPU", "Fans", "Power");
 
 	public void logout(ActionEvent event) throws IOException {
-		Parent newview = FXMLLoader.load(getClass().getResource("CompanyHome.fxml"));
+		Parent newview = FXMLLoader.load(getClass().getResource(
+				"CompanyHome.fxml"));
 		Scene tableViewScene = new Scene(newview);
 
-		Stage window = (Stage) (((Node) event.getSource()).getScene().getWindow());
+		Stage window = (Stage) (((Node) event.getSource()).getScene()
+				.getWindow());
 
 		window.setScene(tableViewScene);
 		window.setTitle("CompanyName");
@@ -45,10 +48,12 @@ public class CompanyNavigationController implements Initializable {
 	}
 
 	public void adminPage(ActionEvent event) throws IOException {
-		Parent newview = FXMLLoader.load(getClass().getResource("CompanyAdmin.fxml"));
+		Parent newview = FXMLLoader.load(getClass().getResource(
+				"CompanyAdmin.fxml"));
 		Scene tableViewScene = new Scene(newview);
 
-		Stage window = (Stage) (((Node) event.getSource()).getScene().getWindow());
+		Stage window = (Stage) (((Node) event.getSource()).getScene()
+				.getWindow());
 
 		window.setScene(tableViewScene);
 		window.setTitle("Control Center Alpha");
@@ -79,21 +84,37 @@ public class CompanyNavigationController implements Initializable {
 		Connection connection = DB.getConnection();
 		Statement stmt = connection.createStatement();
 		ResultSet result = stmt.executeQuery(sql);
+		ArrayList<ProductsObj> obj = new ArrayList<ProductsObj>();
+		ObservableList<ProductsObj> oList = FXCollections.observableArrayList();
 		while (result.next()) {
-			l.add("Item # "+ result.getInt(1) +" In Stock: " + result.getInt(2) + "  Name: " + result.getString(3) + "   $" + result.getFloat(4)
-            + "  Company: " + result.getString(5));
+			l.add("Item # " + result.getInt(1) + " In Stock: "
+					+ result.getInt(2) + "  Name: " + result.getString(3)
+					+ "   $" + result.getFloat(4) + "  Company: "
+					+ result.getString(5));
+			String nNum = Integer.toString(result.getInt(1));
+			String nStock = Integer
+					.toString(result.getInt(2));
+			String item = result.getString(3);
+			String price = Float
+					.toString(result.getFloat(4));
+			String company = result.getString(5);
+			oList.add(new ProductsObj(nNum,nStock,item,price,company));
+			obj.add(new ProductsObj(nNum,nStock,item,price,company));
 
 		}
-
+		
+		
+		
 		// make it so its getting items from data base
-		ObservableList<String> List = FXCollections.observableArrayList(l);
+		// ObservableList<String> List = FXCollections.observableArrayList(l);
 
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("CompanyBuy.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource(
+				"CompanyBuy.fxml"));
 		Parent root = (Parent) loader.load();
 		buyController buy = loader.getController();
 
-		buy.myFunction(List);
-
+		buy.myFunction(oList); // sends ArrayList of objects over to the other scene
+		
 		Stage stage = new Stage();
 
 		stage.setScene(new Scene(root));

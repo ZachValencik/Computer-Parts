@@ -92,29 +92,22 @@ public class CompanyNavigationController implements Initializable {
 					+ "   $" + result.getFloat(4) + "  Company: "
 					+ result.getString(5));
 			String nNum = Integer.toString(result.getInt(1));
-			String nStock = Integer
-					.toString(result.getInt(2));
+			String nStock = Integer.toString(result.getInt(2));
 			String item = result.getString(3);
-			String price = Float
-					.toString(result.getFloat(4));
+			String price = Float.toString(result.getFloat(4));
 			String company = result.getString(5);
-			oList.add(new ProductsObj(nNum,nStock,item,price,company));
-			obj.add(new ProductsObj(nNum,nStock,item,price,company));
+			oList.add(new ProductsObj(nNum, nStock, item, price, company));
+			obj.add(new ProductsObj(nNum, nStock, item, price, company));
 
 		}
-		
-		
-		
-		// make it so its getting items from data base
-		// ObservableList<String> List = FXCollections.observableArrayList(l);
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(
 				"CompanyBuy.fxml"));
 		Parent root = (Parent) loader.load();
 		buyController buy = loader.getController();
 
-		buy.myFunction(oList); // sends ArrayList of objects over to the other scene
-		
+		buy.myFunction(oList); // sends obVList of objects over to the other
+
 		Stage stage = new Stage();
 
 		stage.setScene(new Scene(root));
@@ -125,6 +118,7 @@ public class CompanyNavigationController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		browseCB.setItems(list);
+		browseCB.getSelectionModel().selectFirst();
 	}
 
 }

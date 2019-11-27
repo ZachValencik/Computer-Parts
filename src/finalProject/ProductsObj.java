@@ -3,20 +3,19 @@ package finalProject;
 import javafx.beans.property.SimpleStringProperty;
 
 public class ProductsObj {
-	/*private String name;
-	private String brand;
-	private String price;
-	private String proNum;
-	private String stock;
-	*/
+	/*
+	 * private String name; private String brand; private String price; private
+	 * String proNum; private String stock;
+	 */
 	private SimpleStringProperty itemNum;
-    private  SimpleStringProperty stock;
-    private  SimpleStringProperty item;
-    private  SimpleStringProperty price;
-    private SimpleStringProperty company;
-	
-	public ProductsObj(String itemNum, String stock, String item, String price, String company) {
-		//super();
+	private SimpleStringProperty stock;
+	private SimpleStringProperty item;
+	private SimpleStringProperty price;
+	private SimpleStringProperty company;
+
+	public ProductsObj(String itemNum, String stock, String item, String price,
+			String company) {
+		// super();
 		this.itemNum = new SimpleStringProperty(itemNum);
 		this.stock = new SimpleStringProperty(stock);
 		this.item = new SimpleStringProperty(item);
@@ -44,10 +43,4 @@ public class ProductsObj {
 		return company.get();
 	}
 
-	
-
-	
-	
-	}
-
-
+}

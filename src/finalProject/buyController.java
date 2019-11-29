@@ -2,11 +2,13 @@ package finalProject;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -28,7 +30,7 @@ public class buyController implements Initializable {
 	TableColumn<ProductsObj, String> company;
 	@FXML
 	private TableView<ProductsObj> tableView = new TableView<ProductsObj>();
-
+	private LinkedList<ProductsObj> list = new LinkedList<ProductsObj>();
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		itemNum.setCellValueFactory(new PropertyValueFactory<ProductsObj, String>(
@@ -43,7 +45,16 @@ public class buyController implements Initializable {
 				"company"));
 
 	}
-
+	public void addItem(ActionEvent event){
+		list.add(tableView.getSelectionModel().getSelectedItem());
+		
+		for(ProductsObj l: list){
+			System.out.println(l.getItem());
+		}
+	}
+	public void resetList(ActionEvent event){
+		list.clear();
+	}
 	public void myFunction(ObservableList<ProductsObj> oList) {
 
 		tableView.setItems(oList);

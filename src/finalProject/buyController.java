@@ -33,6 +33,10 @@ public class buyController implements Initializable {
 	@FXML
 	TableColumn<ProductsObj, String> company;
 	@FXML
+	TableColumn<ProductsObj,String> cart;
+	@FXML
+	TableView<ProductsObj> cartTable;
+	@FXML
 	private TableView<ProductsObj> tableView = new TableView<ProductsObj>();
 	private LinkedList<ProductsObj> list = new LinkedList<ProductsObj>();
 	private boolean notEmpty = false;

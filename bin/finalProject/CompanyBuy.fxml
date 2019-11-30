@@ -22,6 +22,11 @@
             <Button layoutX="548.0" layoutY="214.0" mnemonicParsing="false" onAction="#addItem" text="Add" />
             <Button layoutX="545.0" layoutY="246.0" mnemonicParsing="false" onAction="#resetList" text="Reset" />
             <Button layoutX="550.0" layoutY="374.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
+            <TableView fx:id="cartTable" layoutY="225.0" prefHeight="175.0" prefWidth="542.0">
+              <columns>
+                <TableColumn fx:id="cart" prefWidth="541.0" text="Cart" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </center>

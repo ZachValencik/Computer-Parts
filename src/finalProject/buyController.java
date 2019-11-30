@@ -1,6 +1,9 @@
 package finalProject;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class buyController implements Initializable {
+	private String user;
 	@FXML
 	TableColumn<ProductsObj, String> itemNum;
 	@FXML
@@ -31,6 +35,8 @@ public class buyController implements Initializable {
 	@FXML
 	private TableView<ProductsObj> tableView = new TableView<ProductsObj>();
 	private LinkedList<ProductsObj> list = new LinkedList<ProductsObj>();
+	private boolean notEmpty = false;
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		itemNum.setCellValueFactory(new PropertyValueFactory<ProductsObj, String>(
@@ -45,18 +51,47 @@ public class buyController implements Initializable {
 				"company"));
 
 	}
-	public void addItem(ActionEvent event){
+
+	public void addItem(ActionEvent event) {
+		notEmpty = true;
 		list.add(tableView.getSelectionModel().getSelectedItem());
-		
-		for(ProductsObj l: list){
+
+		for (ProductsObj l : list) {
 			System.out.println(l.getItem());
 		}
 	}
-	public void resetList(ActionEvent event){
-		list.clear();
-	}
-	public void myFunction(ObservableList<ProductsObj> oList) {
 
+	public void resetList(ActionEvent event) {
+		list.clear();
+		notEmpty = false;
+	}
+
+	public void buy(ActionEvent event) throws SQLException {
+		if (notEmpty) {
+			for (ProductsObj l : list) {
+				String DBPath = "45.55.136.114/computerParts";
+				String fName = "pw.txt";
+				String id = "csc3610";
+				DBAbstract DB = new DBAbstract(DBPath, fName, id);
+				Connection con = DB.getConnection();
+
+				String query = " insert into SALES (part,price,company,buyer)"
+						+ " values (?, ?, ?,?)";
+
+				PreparedStatement preparedStmt = con.prepareStatement(query);
+				preparedStmt.setString(1, l.getItem()); // random stu id
+				preparedStmt.setFloat(2, Float.parseFloat(l.getPrice())); // first
+																			// name
+				preparedStmt.setString(3, l.getCompany());
+				preparedStmt.setString(4, user);
+
+				preparedStmt.execute();
+			}
+		}
+	}
+
+	public void myFunction(ObservableList<ProductsObj> oList, String user) {
+		this.user = user;
 		tableView.setItems(oList);
 
 	}

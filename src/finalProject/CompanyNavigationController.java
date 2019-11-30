@@ -19,14 +19,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
 
 public class CompanyNavigationController implements Initializable {
-
+	private String user;
 	@FXML
 	ComboBox browseCB;
+
+	@FXML
+	Button adminButton;
 
 	// @FXML
 	// RadioButton adminCB;
@@ -106,7 +110,7 @@ public class CompanyNavigationController implements Initializable {
 		Parent root = (Parent) loader.load();
 		buyController buy = loader.getController();
 
-		buy.myFunction(oList); // sends obVList of objects over to the other
+		buy.myFunction(oList,user); // sends obVList of objects over to the other
 
 		Stage stage = new Stage();
 
@@ -119,6 +123,14 @@ public class CompanyNavigationController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		browseCB.setItems(list);
 		browseCB.getSelectionModel().selectFirst();
+	}
+
+	public void getUser(String u) {
+		user = u;
+
+		if (!user.equals("Admin")) {
+			adminButton.setVisible(false);
+		}
 	}
 
 }

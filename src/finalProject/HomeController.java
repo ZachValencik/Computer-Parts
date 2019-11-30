@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +28,7 @@ public class HomeController {
 	 * Home for the Company server where an user/admin login into an account or
 	 * choose to create one. user and admin will navigate to different scenes.
 	 */
-
+	private String user; 
 	@FXML
 	TextField userField;
 	@FXML
@@ -67,7 +68,7 @@ public class HomeController {
 			//checks if username and pass word match
 			if (result.getString(5).toLowerCase().equals(userField.getText().toLowerCase())
 					&& result.getString(6).equals(passField.getText())) {
-				System.out.println("Yes!");
+				user = result.getString(5);
 				login = true;
 				break;
 
@@ -75,17 +76,39 @@ public class HomeController {
 		}
 
 		if (login) {
-			Parent newview = FXMLLoader.load(getClass().getResource("CompanyNavigation.fxml"));
+			/*Parent newview = FXMLLoader.load(getClass().getResource("CompanyNavigation.fxml"));
 			Scene tableViewScene = new Scene(newview);
 			Stage window = (Stage) (((Node) event.getSource()).getScene().getWindow());
 			window.setScene(tableViewScene);
 			window.setTitle("Navigation Page");
 
 			window.show();
+			*/
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(
+					"CompanyNavigation.fxml"));
+			Parent root = (Parent) loader.load();
+			CompanyNavigationController sendUser = loader.getController();
+
+			sendUser.getUser(user); // sends obVList of objects over to the other
+
+			Stage stage = new Stage();
+
+			stage.setScene(new Scene(root));
+			stage.show();
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		} else
 			wrongInfoTxt.setText("Wrong User Name or Password!");
 		//testing git
 
 	}
+	
 
 }

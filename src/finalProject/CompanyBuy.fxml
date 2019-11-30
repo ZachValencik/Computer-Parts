@@ -21,7 +21,7 @@
             </TableView>
             <Button layoutX="548.0" layoutY="214.0" mnemonicParsing="false" onAction="#addItem" text="Add" />
             <Button layoutX="545.0" layoutY="246.0" mnemonicParsing="false" onAction="#resetList" text="Reset" />
-            <Button layoutX="550.0" layoutY="374.0" mnemonicParsing="false" text="Buy" />
+            <Button layoutX="550.0" layoutY="374.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
          </children>
       </AnchorPane>
    </center>

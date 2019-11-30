@@ -96,6 +96,7 @@ public class buyController implements Initializable {
 
 	public void myFunction(ObservableList<ProductsObj> oList, String user) {
 		this.user = user;
+		
 		tableView.setItems(oList);
 
 	}

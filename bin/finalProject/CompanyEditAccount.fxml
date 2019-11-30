@@ -1,42 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.EditController">
    <top>
-      <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Accounts in DataBase" BorderPane.alignment="CENTER" />
+      <Text fx:id="text" fill="#006aff" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Accounts in DataBase" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font></Text>
    </top>
    <center>
-      <GridPane maxHeight="200.0" maxWidth="400.0" BorderPane.alignment="CENTER">
+      <GridPane maxHeight="200.0" maxWidth="450.0" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#delete" text="Delete User" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#delete" text="Delete User" GridPane.columnIndex="5" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <TextField fx:id="fNField" promptText="FirstName" />
-            <PasswordField fx:id="lNField" promptText="LastName" GridPane.columnIndex="1" />
-            <TextField fx:id="uNField" promptText="UserName" GridPane.columnIndex="2" />
-            <TextField fx:id="eField" promptText="Email" GridPane.columnIndex="3" />
-            <TextField fx:id="pField" promptText="Phone #" GridPane.columnIndex="4" />
-            <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="fNField" promptText="FirstName" GridPane.rowIndex="1" />
+            <TextField fx:id="uNField" promptText="UserName" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="eField" promptText="Email" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField fx:id="pField" promptText="Password" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#edit" text="Change" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="lNField" promptText="LastName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="phoneField" promptText="Phone #" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#085bff" layoutX="9.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Text fill="#085bff" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Text fill="#085bff" layoutX="26.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+               <children>
+                  <Text fill="#085bff" layoutX="13.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+               <children>
+                  <Text fill="#085bff" layoutX="23.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5">
+               <children>
+                  <Text fill="#085bff" layoutX="21.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" />
+               </children>
+            </AnchorPane>
          </children>
       </GridPane>
    </center>

@@ -43,8 +43,7 @@ public class AdminController implements Initializable {
 	private double rev = 0;
 
 	private ObservableList<String> statList = FXCollections
-			.observableArrayList("Total Users",
-					"Total Revenue");
+			.observableArrayList("Total Users", "Total Revenue");
 	private ObservableList<String> invList = FXCollections.observableArrayList(
 			"HDD", "SSD", "CPU", "FANS", "POWER");
 
@@ -81,15 +80,18 @@ public class AdminController implements Initializable {
 		String id = "csc3610";
 		DBAbstract DB = new DBAbstract(DBPath, fName, id);
 		Connection con = DB.getConnection();
-		String SQL = "Select U_USERNAME from USER_INFO";
+		String SQL = "SELECT * FROM `USER_INFO` limit 10000";
 		Statement stmt = con.createStatement();
 		ResultSet result = stmt.executeQuery(SQL);
 		String n = sField.getText();
-
+		UserObj obj = null;
 		while (result.next()) {
-			if (result.getString(1).toLowerCase().equals(n.toLowerCase())) {
+			if (result.getString(6).toLowerCase().equals(n.toLowerCase())) {
+				obj = new UserObj(result.getInt(1), result.getString(2),
+						result.getString(3), result.getString(4),
+						result.getString(5), result.getString(6),
+						result.getString(7));
 				foundName = true;
-				System.out.println("YES");
 				break;
 			}
 
@@ -101,7 +103,7 @@ public class AdminController implements Initializable {
 			Parent root = (Parent) loader.load();
 			EditController edit = loader.getController();
 
-			edit.myFunction(n);
+			edit.myFunction(n,obj);
 
 			Stage stage = new Stage();
 
@@ -148,18 +150,17 @@ public class AdminController implements Initializable {
 				rev += result.getFloat(1);
 			}
 			infoTxt.setText("Total Revenue = $" + rev);
-		}else
-			if(infoCB.getValue().toString().equals("Total Users")){
+		} else if (infoCB.getValue().toString().equals("Total Users")) {
 
-				String SQL = "Select U_FNAME from USER_INFO";
-				Statement stmt = con.createStatement();
-				ResultSet result = stmt.executeQuery(SQL);
-				int i=0;
-				while (result.next()) {
-					i++;
-				}
-				infoTxt.setText("Number of users is "+i);
+			String SQL = "Select U_FNAME from USER_INFO";
+			Statement stmt = con.createStatement();
+			ResultSet result = stmt.executeQuery(SQL);
+			int i = 0;
+			while (result.next()) {
+				i++;
 			}
+			infoTxt.setText("Number of users is " + i);
+		}
 
 	}
 

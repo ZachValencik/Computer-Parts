@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.NewAccountController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.NewAccountController">
    <center>
       <GridPane maxHeight="200.0" maxWidth="400.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -29,14 +29,14 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" GridPane.rowIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number (###-###-####)" GridPane.rowIndex="2" />
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" GridPane.rowIndex="1" />
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number (###-###-####)" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="4" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address" GridPane.rowIndex="3" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" GridPane.rowIndex="4" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password" GridPane.rowIndex="5" />
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address" GridPane.rowIndex="3" />
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" GridPane.rowIndex="4" />
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" GridPane.rowIndex="5" />
             <Button fx:id="submitBtn" mnemonicParsing="false" onAction="#createAccount" text="Submit" textFill="#0777ff" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Button fx:id="backBtn" mnemonicParsing="false" onAction="#goHome" text="Back" textFill="#0777ff" GridPane.rowIndex="6" />
             <TextField fx:id="fnField" GridPane.columnIndex="1" />
@@ -55,7 +55,7 @@
    <top>
       <AnchorPane prefHeight="62.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="165.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Account">
+            <Text fill="RED" layoutX="165.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Account">
                <font>
                   <Font size="30.0" />
                </font>

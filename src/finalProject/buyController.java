@@ -23,6 +23,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class buyController implements Initializable {
 	private String user;
 	@FXML
+	private TableView<ProductsObj> tableView = new TableView<ProductsObj>();
+	@FXML
 	TableColumn<ProductsObj, String> itemNum;
 	@FXML
 	TableColumn<ProductsObj, String> inStock;
@@ -32,12 +34,17 @@ public class buyController implements Initializable {
 	TableColumn<ProductsObj, String> price;
 	@FXML
 	TableColumn<ProductsObj, String> company;
-	@FXML
-	TableColumn<ProductsObj,String> cart;
+	
 	@FXML
 	TableView<ProductsObj> cartTable;
 	@FXML
-	private TableView<ProductsObj> tableView = new TableView<ProductsObj>();
+	TableColumn<ProductsObj, String> cartItem;
+	@FXML
+	TableColumn<ProductsObj, String> cartPrice;
+	@FXML
+	TableColumn<ProductsObj, String> cartCompany;
+	
+	
 	private LinkedList<ProductsObj> list = new LinkedList<ProductsObj>();
 	private boolean notEmpty = false;
 
@@ -53,21 +60,33 @@ public class buyController implements Initializable {
 				"price"));
 		company.setCellValueFactory(new PropertyValueFactory<ProductsObj, String>(
 				"company"));
+		
+		
+		cartItem.setCellValueFactory(new PropertyValueFactory<ProductsObj, String>(
+				"item"));
+		cartPrice.setCellValueFactory(new PropertyValueFactory<ProductsObj, String>(
+				"price"));
+		cartCompany.setCellValueFactory(new PropertyValueFactory<ProductsObj, String>(
+				"company"));
+		
 
 	}
 
 	public void addItem(ActionEvent event) {
 		notEmpty = true;
 		list.add(tableView.getSelectionModel().getSelectedItem());
-
+		ObservableList<ProductsObj> oL = FXCollections.observableArrayList(list);
+		
 		for (ProductsObj l : list) {
 			System.out.println(l.getItem());
 		}
+		cartTable.setItems(oL);
 	}
 
 	public void resetList(ActionEvent event) {
 		list.clear();
 		notEmpty = false;
+		cartTable.getItems().clear();
 	}
 
 	public void buy(ActionEvent event) throws SQLException {

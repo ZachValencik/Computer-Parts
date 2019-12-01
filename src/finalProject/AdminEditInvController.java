@@ -78,7 +78,9 @@ public class AdminEditInvController {
 		} else if (part.equals("POWER")) {
 			fields = "(POW_NUM, POW_AMOUNT, POW_NAME, POW_PRICE, POW_COMPANY)";
 			r = stmt.executeQuery("SELECT * FROM `POWER` limit 10000");
-
+		} else if (part.equals("HDD")) {
+			fields = "(HDD_NUM, HDD_AMOUNT, HDD_NAME, HDD_PRICE, HDD_COMPANY)";
+			r = stmt.executeQuery("SELECT * FROM `HDD` limit 10000");
 		}
 
 		String query = " insert into " + part + fields + " values (?,?,?,?,?)";

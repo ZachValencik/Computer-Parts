@@ -163,6 +163,19 @@ public class AdminController implements Initializable {
 		}
 
 	}
+	
+	public void goToCreateAccount(ActionEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("CompanyNewAccount.fxml"));
+		Parent root = (Parent) loader.load();
+
+		Stage stage = new Stage();
+		
+		stage.setScene(new Scene(root));
+		stage.setTitle("Create a new Account");
+		stage.show();
+		
+
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

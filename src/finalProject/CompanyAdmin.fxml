@@ -43,7 +43,8 @@
             <Button fx:id="navigationButton" layoutX="321.0" layoutY="269.0" mnemonicParsing="false" onAction="#navigationPage" prefHeight="25.0" prefWidth="108.0" text="Navigation Page" textFill="#0777ff" />
             <Text fx:id="invalidNameTxt" fill="#ff0202" layoutX="258.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text fx:id="infoTxt" layoutX="99.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Button layoutX="85.0" layoutY="188.0" mnemonicParsing="false" onAction="#info" text="Info" textFill="#3300ff" />
+            <Button layoutX="85.0" layoutY="188.0" mnemonicParsing="false" onAction="#info" text="Info" textFill="#006fff" />
+            <Button layoutX="60.0" layoutY="269.0" mnemonicParsing="false" onAction="#goToCreateAccount" text="Create User" textFill="#0099ff" />
          </children>
       </AnchorPane>
    </center>

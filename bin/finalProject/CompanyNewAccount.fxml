@@ -38,7 +38,6 @@
             <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" GridPane.rowIndex="4" />
             <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" GridPane.rowIndex="5" />
             <Button fx:id="submitBtn" mnemonicParsing="false" onAction="#createAccount" text="Submit" textFill="#0777ff" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#goHome" text="Back" textFill="#0777ff" GridPane.rowIndex="6" />
             <TextField fx:id="fnField" GridPane.columnIndex="1" />
             <TextField fx:id="lnField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" />

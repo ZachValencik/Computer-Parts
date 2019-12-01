@@ -104,17 +104,6 @@ public class NewAccountController implements Initializable {
 
 	}
 
-	public void goHome(ActionEvent event) throws IOException {
-		Parent newview = FXMLLoader.load(getClass().getResource("CompanyHome.fxml"));
-		Scene tableViewScene = new Scene(newview);
-
-		Stage window = (Stage) (((Node) event.getSource()).getScene().getWindow());
-
-		window.setScene(tableViewScene);
-		window.setTitle("Computer Parts Company");
-		window.show();
-	}
-
 	private static void addIntoTable(DBAbstract DB, String f, String l, String p, String e, String u, String pW)
 			throws ClassNotFoundException, SQLException {
 

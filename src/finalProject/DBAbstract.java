@@ -43,7 +43,7 @@ public class DBAbstract {
 	    return resultSet;
 	}
 	public  void setPW( String fName ) {
-		  System.out.println(System.getProperty( fName ));
+		 // System.out.println(System.getProperty( fName ));
 	        File file = new File( fName );
 	        try {
 	            Scanner scnr = new Scanner(file);

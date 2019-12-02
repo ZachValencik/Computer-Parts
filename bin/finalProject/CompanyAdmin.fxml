@@ -8,23 +8,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.AdminController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.AdminController">
    <center>
-      <AnchorPane prefHeight="24.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="24.0" prefWidth="600.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="200.0" layoutY="73.0" stroke="#0777ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Options">
+            <Text fill="RED" layoutX="200.0" layoutY="73.0" stroke="#0777ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Options">
                <font>
-                  <Font size="30.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <Text layoutX="79.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find Info">
+            <Text fill="RED" layoutX="79.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find Info">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
             <ComboBox fx:id="infoCB" layoutX="50.0" layoutY="159.0" prefWidth="120.0" />
             <Text fx:id="dneTxt" layoutX="74.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="73.0" />
-            <Text layoutX="269.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit User">
+            <Text fill="RED" layoutX="269.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit User">
                <font>
                   <Font size="16.0" />
                </font>
@@ -32,15 +32,19 @@
             <TextField fx:id="sField" layoutX="226.0" layoutY="159.0" promptText="Type username here" />
             <Button fx:id="editUserBtn" layoutX="282.0" layoutY="188.0" mnemonicParsing="false" onAction="#editUsr" text="Edit" textFill="#0777ff" />
             <Text fx:id="statTxt" layoutX="69.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="83.0" />
-            <Text layoutX="438.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Inventory">
+            <Text fill="RED" layoutX="438.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Inventory">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
             <ComboBox fx:id="invCB" layoutX="427.0" layoutY="159.0" prefWidth="120.0" />
-            <Button fx:id="editInvBtn" layoutX="469.0" layoutY="188.0" mnemonicParsing="false" onAction="#editInv" text="Edit" textFill="#0777ff" />
+            <Button fx:id="editInvBtn" layoutX="459.0" layoutY="188.0" mnemonicParsing="false" onAction="#editInv" text="Edit Inv" textFill="#0777ff" />
             <Button fx:id="logButton" layoutX="183.0" layoutY="269.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="60.0" text="Logout" textFill="#0777ff" />
             <Button fx:id="navigationButton" layoutX="321.0" layoutY="269.0" mnemonicParsing="false" onAction="#navigationPage" prefHeight="25.0" prefWidth="108.0" text="Navigation Page" textFill="#0777ff" />
+            <Text fx:id="invalidNameTxt" fill="#ff0202" layoutX="258.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="infoTxt" layoutX="99.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Button layoutX="85.0" layoutY="188.0" mnemonicParsing="false" onAction="#info" text="Info" textFill="#006fff" />
+            <Button layoutX="60.0" layoutY="269.0" mnemonicParsing="false" onAction="#goToCreateAccount" text="Create User" textFill="#0099ff" />
          </children>
       </AnchorPane>
    </center>

@@ -1,5 +1,6 @@
 package finalProject;
 
+
 public class UserObj {
 	
 	private int uNum;

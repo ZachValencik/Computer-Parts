@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -149,7 +150,10 @@ public class AdminController implements Initializable {
 			while (result.next()) {
 				rev += result.getFloat(1);
 			}
-			infoTxt.setText("Total Revenue = $" + rev);
+			
+			DecimalFormat df = new DecimalFormat("#.00");
+			
+			infoTxt.setText("Total Revenue = $" + df.format(rev));
 		} else if (infoCB.getValue().toString().equals("Total Users")) {
 
 			String SQL = "Select U_FNAME from USER_INFO";

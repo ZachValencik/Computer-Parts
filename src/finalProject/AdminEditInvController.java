@@ -105,6 +105,29 @@ public class AdminEditInvController {
 		addTxt.setText("Added");
 	}
 
+	public void delete(ActionEvent event) throws SQLException {
+		if (exist) {
+			String DBPath = "45.55.136.114/computerParts";
+			String fName = "pw.txt";
+			String id = "csc3610";
+			DBAbstract DB = new DBAbstract(DBPath, fName, id);
+			Connection con = DB.getConnection();
+			String query = "";
+			if (part.equals("FANS"))
+				query = "delete from FANS where FAN_NUM = ?";
+			else
+				query = "delete from " + part + " where " + part + "_NUM = ?";
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			preparedStmt.setInt(1, idNum);
+
+			// execute the prepared statement
+			preparedStmt.execute();
+
+			con.close();
+			sTxt.setText("Searched Item Deleted");
+		}
+	}
+
 	public void searchId(ActionEvent event) throws SQLException {
 		exist = false; // assume its false and reset it if found true
 		String DBPath = "45.55.136.114/computerParts";

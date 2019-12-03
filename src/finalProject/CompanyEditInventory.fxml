@@ -72,7 +72,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                            <children>
-                              <Button layoutX="7.0" layoutY="38.0" mnemonicParsing="false" text="Delete Item" textFill="RED" />
+                              <Button layoutX="7.0" layoutY="38.0" mnemonicParsing="false" onAction="#delete" text="Delete Item" textFill="RED" />
                               <Text fx:id="addTxt" fill="RED" layoutX="42.0" layoutY="6.0" strokeType="OUTSIDE" strokeWidth="0.0" />
                            </children>
                         </AnchorPane>

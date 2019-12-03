@@ -111,6 +111,7 @@ public class buyController implements Initializable {
 				preparedStmt.execute();
 			}
 		}
+		list.clear();
 		cartTable.getItems().clear();
 	}
 

@@ -73,6 +73,11 @@
                   <Text fill="#f80000" layoutX="21.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" />
                </children>
             </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <children>
+                  <Text fx:id="editTxt" fill="RED" layoutX="26.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </AnchorPane>
          </children>
       </GridPane>
    </center>

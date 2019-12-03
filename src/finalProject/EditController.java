@@ -35,6 +35,8 @@ public class EditController {
 	TextField phoneField;
 	@FXML
 	Text text;
+	@FXML
+	Text editTxt;
 	private String uN;
 	private int id;
 	private boolean deleted = false;
@@ -64,6 +66,7 @@ public class EditController {
 			}
 
 		}
+		editTxt.setText("Edited");
 	}
 
 	public void delete(ActionEvent event) {

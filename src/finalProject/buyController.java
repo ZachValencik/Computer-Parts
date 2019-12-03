@@ -111,6 +111,7 @@ public class buyController implements Initializable {
 				preparedStmt.execute();
 			}
 		}
+		cartTable.getItems().clear();
 	}
 
 	public void myFunction(ObservableList<ProductsObj> oList, String user) {

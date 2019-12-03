@@ -48,6 +48,8 @@ public class AdminEditInvController {
 	TextField sIdField;
 	@FXML
 	Text sTxt;
+	@FXML
+	Text addTxt;
 
 	public void recieve(String item) {
 		part = item;
@@ -100,6 +102,7 @@ public class AdminEditInvController {
 		preparedStmt.setString(5, companyField.getText()); // gpa
 
 		preparedStmt.execute();
+		addTxt.setText("Added");
 	}
 
 	public void searchId(ActionEvent event) throws SQLException {
